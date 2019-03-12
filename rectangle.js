@@ -1,18 +1,19 @@
-$(function(){
-  console.log(0)
-  var $width=$('#width'),
-      $height=$('#height'),
-      $btnCal=$('#calculate'),
-      $perimenter=$('#perimeter'),
-      $area=$('#area');
-  $btnCal.click(function(){
-    var w=Number($width.val());
-    var h=Number($height.val());
-console.log(w,h);
-    var p=(w+h)*2,
-        a=w*h;
+$(function() {
+    var $width = $('#width'),
+      $height = $('#height'),
+      $btnCal = $('#calculate'),
+      $perimeter = $('#perimeter'),
+      $area = $('#area');
 
-  $perimeter.val(p);
-  $area.val(a);
-  })
-})
+  $btnCal.click(function(){
+      var w = $width.val(),
+          h = $height.val();
+
+    var r = new Rectangle(w, h);
+
+        $perimeter.val(r.perimeter());
+            $area.val(r.area());
+              
+  });
+
+});
