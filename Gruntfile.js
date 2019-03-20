@@ -1,33 +1,46 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-    eslint: {
+    mochacli: {
       options: {
-        configFile: '.eslintrc.json'    
-      },
-      target: ['*.js']
-        
-    },
-    csslint: {
-      options: {
-        csslintrc: '.csslintrc'
+            reporter: 'spec',
+            bail: true
+              
           
       },
-      src: '*.css'
+      all: ['test/*.js']
+                                                  
+                             
+    },
+    mocha_istanbul: {
+        coverage: {
+                src: 'test'          
+        }
+            
         
     },
-    htmlhint: {
-      options: {
-        htmlhintrc: '.htmlhintrc'
+    istanbul_check_coverage: {
+       default: {
+         options: {
+                  coverageFolder: 'coverage*',
+                  check: {
+                        lines: 90,
+                        statements: 90                                                 
+                  }                
+        }  
+      } 
+            
+        
+    }
           
-      },
-      src: '*.html'
-                
-    }   
+      
   });
 
-  grunt.loadNpmTasks('grunt-contrib-csslint');
-  grunt.loadNpmTasks('grunt-htmlhint');
-  grunt.loadNpmTasks('grunt-eslint');
-  grunt.registerTask('default', ['htmlhint', 'csslint', 'eslint']);
+      grunt.loadNpmTasks('grunt-mocha-cli');
+      grunt.loadNpmTasks('grunt-mocha-istanbul');
+      grunt.registerTask('default', ['mochacli']);   
+      grunt.registerTask('cover', ['mocha_istanbul']);
+      grunt.registerTask('check-cover', ['istanbul_check_coverage']);
+
 
 };
+
