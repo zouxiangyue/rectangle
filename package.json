@@ -7,18 +7,19 @@
     "grunt": "^1.0.3",
     "grunt-contrib-csslint": "^2.0.0",
     "grunt-eslint": "^21.0.0",
-    "grunt-htmlhint": "^0.9.13"
+    "grunt-htmlhint": "^0.9.13",
+    "grunt-mocha-cli": "^4.0.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zouxiangyue/rectangle.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "zouxiangyue",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zouxiangyue/rectangle/issues"
   },
