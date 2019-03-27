@@ -1,7 +1,7 @@
 div {
     font-size: 1.1em;
     margin: 50px auto;
-    width: 370px;
+    width: 500px;
 
 }
 
@@ -15,4 +15,12 @@ input, label {
 #calculate {
     margin-left: 63px;
     width: 70px;
+}
+
+span{
+  color:red;
+}
+
+#widthValidation,#heightValidation{
+  color:red;
 }
