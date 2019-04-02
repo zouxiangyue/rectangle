@@ -7,38 +7,30 @@ $(function() {
   var    $widthValidation=$('#width-validation');
   var    $heightValidation=$('#height-validation');
 
-  $width.blur(()=>{
+$btnCal.click(function(){
     var w=$width.val();
-    var result= valid(w);
-    if(!result.isOk){
-      $widthValidation.html('宽度'+result.reason);
+    var h=$height.val();
+    var result1= valid(w),
+        result2=valid(h);
+    if(!result1.isOk){
+      $widthValidation.html('宽度'+result1.reason);
       $width.focus();
     }else{
       $widthValidation.html('')
     }
-  });
-  $height.blur(()=>{
-    var h=$height.val();
-    var result=valid(h);
-    if(!result.isOk){
-      $heightValidation.html('高度'+result.reason);
+    if(!result2.isOk){
+      $heightValidation.html('高度'+result2.reason);
       $height.focus();
     }else{
       $heightValidation.html('');
     }
-  })
-  $btnCal.click(function(){
-    var w = $width.val();
-    var h = $height.val();
     if(!valid(w).isOk || !valid(h).isOk){
       $perimeter.val('');
-      $area.val('')
+      $area.val('');
       return;
     }
     var r = new Rectangle(w, h);
     $perimeter.val(r.perimeter());
     $area.val(r.area());
-              
   });
-
 });
