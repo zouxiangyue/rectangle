@@ -11,8 +11,15 @@ input, label {
     padding-left: 5px;
 
 }
-
+input{
+  width:200px;
+}
+.span1:after{
+  content:'x'
+}
+.span2:after{
+  content:'✓'
+}
 #calculate {
     margin-left: 63px;
-    width: 70px;
-}
+    width:7
