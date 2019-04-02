@@ -13,23 +13,18 @@ function Rectangle(width, height) {
 
 }
 
-function valid(value){
-  var result={
-    isOk:false,
-    reason:''
+function validStr(e){
+  if(/[abcdf-zABCDF-Z`~!@#$%^&*()=_+[\]{}|;:'",<>/?\\]/.test(e.key)){
+      e.preventDefault()            
   }
-  if(value===''){
-    result.reason='不能为空！';
-    return result;
-  }else if(value<=0){
-    result.reason='不能为非正数字！';
-    return result;
-  }else if(!/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test(value)){
-    result.reason="不能为非法数字！";
-    return result;
-  }else{
-    result.isOk=true;
-    return result;
+  if(e.key==='.'){
+         if(e.target.value==='')e.preventDefault();
+         if(e.target.value.indexOf('.',0)!=-1){
+              e.preventDefault();                  
+         }else{
+              if(e.target.selectionStart===0){
+                   e.preventDefault();
+              }
+          }
   }
-
 }
