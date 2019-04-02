@@ -12,7 +12,7 @@ $(function() {
     var result= valid(w);
     if(!result.isOk){
       $widthValidation.html('宽度'+result.reason);
-      $width,focus();
+      $width.focus();
     }else{
       $widthValidation.html('')
     }
