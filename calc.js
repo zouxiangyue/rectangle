@@ -12,3 +12,26 @@ function Rectangle(width, height) {
     };
 
 }
+
+function validStr(e){
+  var span=$('span');
+
+  if(/[abcdf-zABCDF-Z`~!@#$%^&*()=_+[\]{}|;:'",<>/?\\]/.test(e.key)){
+          e.preventDefault()            
+              
+  }
+  if(e.key==='.'){
+          if(e.target.value==='')e.preventDefault();
+          if(e.target.value.indexOf('.',0)!=-1){
+                e.preventDefault();                  
+                                    
+           }else{
+             if(e.target.selectionStart===0){
+                  e.preventDefault();
+                                                
+             }
+                       
+           }
+             
+  }
+}

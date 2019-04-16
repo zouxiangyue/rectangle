@@ -15,11 +15,14 @@ input{
   width:200px;
 }
 .span1:after{
-  content:'x'
+  content:'x';
+  color:red;
 }
 .span2:after{
-  content:'✓'
+  content:'✓';
+  color:green;
+  font-size:20px
 }
 #calculate {
     margin-left: 63px;
-    width:7
+    width:70px;
